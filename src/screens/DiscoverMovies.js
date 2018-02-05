@@ -12,25 +12,17 @@ import {
   Title,
   Text
 } from "native-base";
+import MovieDetail from "../components/MovieDetail";
 
 class DiscoverMovies extends Component {
   componentWillMount() {
     this.props.discoverMovies();
-
-    this.createDataSource(this.props);
-  }
-  componentWillReceiveProps(nextProps) {
-    this.createDataSource(nextProps);
-  }
-
-  createDataSource({ movies }) {
-    // this.
   }
 
   renderRow(movie) {
     return (
       <ListItem>
-        <Text>{movie.title}</Text>
+        <MovieDetail movie={movie} />
       </ListItem>
     );
   }
