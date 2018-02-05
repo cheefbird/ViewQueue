@@ -1,4 +1,4 @@
-import { DISCOVER_MOVIES } from "./types";
+import { DISCOVER_MOVIES, SHOW_MOVIE_DETAILS } from "./types";
 import axios from "axios";
 
 export const discoverMovies = () => {

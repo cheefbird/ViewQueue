@@ -1,18 +1,9 @@
 import _ from "lodash";
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import { discoverMovies } from "../actions";
-import {
-  Container,
-  Content,
-  Header,
-  Body,
-  List,
-  ListItem,
-  Title,
-  Text
-} from "native-base";
-import MovieDetail from "../components/MovieDetail";
+import { discoverMovies } from "../../actions";
+import { Container, Content, List, ListItem } from "native-base";
+import MovieDetail from "../../components/MovieDetail";
 
 class DiscoverMovies extends Component {
   componentWillMount() {

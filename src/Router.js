@@ -1,7 +1,8 @@
 import React from "react";
 import { Image } from "react-native";
 import { Router, Scene, Tabs, Stack, Actions } from "react-native-router-flux";
-import DiscoverMovies from "./screens/DiscoverMovies";
+import DiscoverMovies from "./screens/discover_tab/DiscoverMovies";
+import MovieDetails from "./screens/discover_tab/MovieDetails";
 
 const tabBarIcon = () => {
   return (
@@ -25,6 +26,11 @@ const MainAppRouter = () => {
             initial
           >
             <Scene key="discover_tab" component={DiscoverMovies} />
+            <Scene
+              key="discover_movie_details"
+              component={MovieDetails}
+              title="Details"
+            />
           </Stack>
           <Stack key="tab_2" title="Discover Movies 2" tabBarLabel="Discover 2">
             <Scene key="discover_tab" component={DiscoverMovies} />
