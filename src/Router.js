@@ -27,7 +27,7 @@ const MainAppRouter = () => {
           >
             <Scene key="discover_tab" component={DiscoverMovies} />
             <Scene
-              key="discover_movie_details"
+              key="movieDetails"
               component={MovieDetails}
               title="Details"
             />

@@ -1,4 +1,4 @@
-import { DISCOVER_MOVIES } from "../actions/types";
+import { DISCOVER_MOVIES, SHOW_MOVIE_DETAILS } from "../actions/types";
 
 const INITIAL_STATE = {};
 
@@ -7,6 +7,9 @@ export default (state = INITIAL_STATE, action) => {
     case DISCOVER_MOVIES:
       console.log("*** ACTION PAYLOAD: ***\n");
       console.log(action.payload);
+      return action.payload;
+
+    case SHOW_MOVIE_DETAILS:
       return action.payload;
 
     default:

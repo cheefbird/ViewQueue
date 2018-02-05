@@ -1,8 +1,9 @@
 import _ from "lodash";
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import { discoverMovies } from "../../actions";
+import { discoverMovies, showDetails } from "../../actions";
 import { Container, Content, List, ListItem } from "native-base";
+import { Actions } from "react-native-router-flux";
 import MovieDetail from "../../components/MovieDetail";
 
 class DiscoverMovies extends Component {
@@ -12,10 +13,19 @@ class DiscoverMovies extends Component {
 
   renderRow(movie) {
     return (
-      <ListItem>
+      <ListItem
+        onPress={() => {
+          Actions.movieDetails({ movie });
+        }}
+      >
         <MovieDetail movie={movie} />
       </ListItem>
     );
+  }
+
+  onRowPress(movie) {
+    // this.props.showDetails(movie);
+    Actions.movieDetail();
   }
 
   render() {
@@ -38,4 +48,6 @@ const mapStateToProps = state => {
   return { movies };
 };
 
-export default connect(mapStateToProps, { discoverMovies })(DiscoverMovies);
+export default connect(mapStateToProps, { discoverMovies, showDetails })(
+  DiscoverMovies
+);

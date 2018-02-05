@@ -16,3 +16,10 @@ export const discoverMovies = () => {
       });
   };
 };
+
+export const showDetails = movie => {
+  return {
+    type: SHOW_MOVIE_DETAILS,
+    payload: movie
+  };
+};
