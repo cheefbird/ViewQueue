@@ -31,11 +31,6 @@ class DiscoverMovies extends Component {
     console.log(this.props);
     return (
       <Container>
-        <Header>
-          <Body>
-            <Title>Discover Movies</Title>
-          </Body>
-        </Header>
         <Content>
           <List dataArray={this.props.movies} renderRow={this.renderRow} />
         </Content>
