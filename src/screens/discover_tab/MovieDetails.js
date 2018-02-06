@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { Image } from "react-native";
 import { Container, Content, View, Text } from "native-base";
+import { store, getState } from "react-redux";
 
 class MovieDetails extends Component {
   // state = {  }

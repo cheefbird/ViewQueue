@@ -12,9 +12,6 @@ class MovieDetail extends Component {
 
     const posterImage = this.fullPosterPath(poster_path);
 
-    console.log("A poster image path:\n");
-    console.log(posterImage);
-
     return (
       <View style={styles.rootContainer}>
         <View style={styles.thumbContainer}>

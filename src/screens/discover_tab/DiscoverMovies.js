@@ -1,7 +1,7 @@
 import _ from "lodash";
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import { discoverMovies, showDetails } from "../../actions";
+import { discoverMovies } from "../../actions";
 import { Container, Content, List, ListItem } from "native-base";
 import { Actions } from "react-native-router-flux";
 import MovieDetail from "../../components/MovieDetail";
@@ -23,17 +23,11 @@ class DiscoverMovies extends Component {
     );
   }
 
-  onRowPress(movie) {
-    // this.props.showDetails(movie);
-    Actions.movieDetail();
-  }
-
   render() {
-    console.log(this.props);
     return (
       <Container>
         <Content>
-          <List dataArray={this.props.movies} renderRow={this.renderRow} />
+          <List dataArray={this.props.newMovies} renderRow={this.renderRow} />
         </Content>
       </Container>
     );
@@ -41,13 +35,13 @@ class DiscoverMovies extends Component {
 }
 
 const mapStateToProps = state => {
-  const movies = _.map(state.movies, val => {
+  const { nextPage, movies } = state.discoverResults;
+
+  const newMovies = _.map(movies, val => {
     return { ...val };
   });
-  console.log(movies);
-  return { movies };
+
+  return { nextPage, newMovies };
 };
 
-export default connect(mapStateToProps, { discoverMovies, showDetails })(
-  DiscoverMovies
-);
+export default connect(mapStateToProps, { discoverMovies })(DiscoverMovies);
