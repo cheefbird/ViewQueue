@@ -24,10 +24,11 @@ class DiscoverMovies extends Component {
   }
 
   render() {
+    console.log(this.props);
     return (
       <Container>
         <Content>
-          <List dataArray={this.props.newMovies} renderRow={this.renderRow} />
+          <List dataArray={this.props.movies} renderRow={this.renderRow} />
         </Content>
       </Container>
     );
@@ -35,13 +36,13 @@ class DiscoverMovies extends Component {
 }
 
 const mapStateToProps = state => {
-  const { nextPage, movies } = state.discoverResults;
+  const { nextPage, results } = state.discoverResults;
 
-  const newMovies = _.map(movies, val => {
+  const movies = _.map(results, val => {
     return { ...val };
   });
 
-  return { nextPage, newMovies };
+  return { nextPage, movies };
 };
 
 export default connect(mapStateToProps, { discoverMovies })(DiscoverMovies);
