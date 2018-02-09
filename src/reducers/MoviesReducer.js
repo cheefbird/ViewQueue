@@ -2,7 +2,7 @@ import { DISCOVER_MOVIES, SHOW_MOVIE_DETAILS } from "../actions/types";
 
 const INITIAL_STATE = {
   nextPage: 1,
-  movies: []
+  results: []
 };
 
 export default (state = INITIAL_STATE, action) => {
@@ -10,7 +10,7 @@ export default (state = INITIAL_STATE, action) => {
     case DISCOVER_MOVIES:
       return {
         nextPage: action.nextPage,
-        movies: [...state.movies, ...action.movies]
+        results: [...state.results, ...action.results]
       };
 
     case SHOW_MOVIE_DETAILS:

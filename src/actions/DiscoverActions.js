@@ -8,12 +8,10 @@ export const discoverMovies = (page = 1) => {
     axios.get(url).then(response => {
       const { results } = response.data;
       let next = page + 1;
-      console.log("RESULTS:");
-      console.log(results);
       dispatch({
         type: DISCOVER_MOVIES,
         nextPage: next,
-        movies: results
+        results
       });
     });
   };
