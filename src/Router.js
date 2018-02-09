@@ -1,5 +1,5 @@
 import React from "react";
-import { Image } from "react-native";
+import { Platform, Image } from "react-native";
 import { Router, Scene, Tabs, Stack, Actions } from "react-native-router-flux";
 import DiscoverMovies from "./screens/discover_tab/DiscoverMovies";
 import MovieDetails from "./screens/discover_tab/MovieDetails";
@@ -25,9 +25,14 @@ const MainAppRouter = () => {
             title="Discover Movies"
             tabBarLabel="Discover"
             icon={tabBarIcon}
+            activeTintColor="black"
             initial
           >
-            <Scene key="discover_tab" component={DiscoverMovies} />
+            <Scene
+              key="discover_tab"
+              activeTintColor="black"
+              component={DiscoverMovies}
+            />
             <Scene
               key="movieDetails"
               component={MovieDetails}
