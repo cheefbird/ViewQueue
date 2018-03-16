@@ -1,6 +1,6 @@
 import React from "react";
-import { Platform, Image } from "react-native";
-import { Router, Scene, Tabs, Stack, Actions } from "react-native-router-flux";
+import { Image } from "react-native";
+import { Router, Scene, Tabs, Stack } from "react-native-router-flux";
 import DiscoverMovies from "./screens/discover_tab/DiscoverMovies";
 import MovieDetails from "./screens/discover_tab/MovieDetails";
 import TabTwo from "./screens/tab_2/TabTwo";
@@ -10,7 +10,7 @@ const tabBarIcon = () => {
   return (
     <Image
       source={require("../resources/icons/tabs_discover_movies.png")}
-      style={{ width: 25, height: 25, tintColor: "red" }}
+      style={{ width: 25, height: 25 }}
     />
   );
 };
@@ -25,7 +25,7 @@ const MainAppRouter = () => {
             title="Discover Movies"
             tabBarLabel="Discover"
             icon={tabBarIcon}
-            activeTintColor="black"
+            activeTintColor="red"
             initial
           >
             <Scene
