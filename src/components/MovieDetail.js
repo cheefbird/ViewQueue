@@ -8,7 +8,7 @@ class MovieDetail extends Component {
   }
 
   render() {
-    const { title, overview, poster_path } = this.props.movie;
+    const { title, overview, poster_path, vote_average } = this.props.movie;
 
     const posterImage = this.fullPosterPath(poster_path);
 
@@ -22,6 +22,9 @@ class MovieDetail extends Component {
         </View>
         <View style={styles.textContainer}>
           <Text style={{ fontWeight: "bold", fontSize: 24 }}>{title}</Text>
+          <Text style={{ fontSize: 20, fontWeight: "bold", color: "red" }}>
+            Score: {vote_average}
+          </Text>
           <Text style={{ fontSize: 18 }}>2018-01-01</Text>
           <Text style={{ fontSize: 14 }}>{overview}</Text>
         </View>
